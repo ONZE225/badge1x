@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 14s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.15);
+    filter: blur(60px);
+    border-radius: 50%;
+    z-index: 0;
+    animation: floatBlob 18s ease-in-out infinite;
+}
+
+body::after {
+    width: 520px;
+    height: 520px;
+    background: rgba(255, 255, 255, 0.08);
+    animation-duration: 22s;
+    animation-delay: -8s;
+}
+
+.container,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+input[type="file"] {
+    padding: 8px;
+}
+
+button[type="submit"],
+.download-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button[type="submit"]:hover,
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.badge-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.badge {
+    width: 600px;
+    height: 400px;
+    background: #000000;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.badge-background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Times New Roman', serif;
+    font-size: 200px;
+    color: white;
+    opacity: 0.12;
+    font-weight: normal;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.badge-top-right {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-family: 'Times New Roman', serif;
+    font-size: 48px;
+    color: white;
+    z-index: 2;
+    font-weight: normal;
+}
+
+.badge-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    z-index: 3;
+    position: relative;
+    flex: 1;
+}
+
+.photo-container {
+    flex-shrink: 0;
+}
+
+.photo-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.nom {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+.poste {
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+}
+
+.concerts {
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+}
+
+.badge-footer {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 4px;
+    z-index: 3;
+    position: relative;
+    padding-top: 20px;
+}
+
+.download-btn {
+    max-width: 300px;
+}
+
+.site-footer {
+    margin-top: 30px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translate(-30%, -20%) scale(1);
+    }
+    50% {
+        transform: translate(40%, 10%) scale(1.2);
+    }
+    100% {
+        transform: translate(-30%, -20%) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .badge {
+        width: 100%;
+        max-width: 500px;
+        height: 350px;
+        padding: 20px;
+    }
+    
+    .badge-background-text {
+        font-size: 150px;
+    }
+    
+    .badge-top-right {
+        font-size: 36px;
+        top: 15px;
+        right: 20px;
+    }
+    
+    .photo-container img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .nom {
+        font-size: 28px;
+    }
+    
+    .poste {
+        font-size: 20px;
+    }
+    
+    .concerts {
+        font-size: 18px;
+    }
+    
+    .badge-footer {
+        font-size: 24px;
+    }
+}
+

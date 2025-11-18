@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Badge Ultra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de Badge Ultra</h1>
+        
+        <div class="form-section">
+            <form id="badgeForm">
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="poste">Poste :</label>
+                    <input type="text" id="poste" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="concerts">Nombre de concerts :</label>
+                    <input type="number" id="concerts" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photo">Photo :</label>
+                    <input type="file" id="photo" accept="image/*" required>
+                </div>
+                
+                <button type="submit">Générer le Badge</button>
+            </form>
+        </div>
+        
+        <div class="badge-section" id="badgeSection" style="display: none;">
+            <div class="badge" id="badge">
+                <div class="badge-background-text">1X</div>
+                <div class="badge-top-right">1X</div>
+                
+                <div class="badge-content">
+                    <div class="photo-container">
+                        <img id="badgePhoto" src="" alt="Photo">
+                    </div>
+                    <div class="info-container">
+                        <div class="nom" id="badgeNom"></div>
+                        <div class="poste" id="badgePoste"></div>
+                        <div class="concerts" id="badgeConcerts"></div>
+                    </div>
+                </div>
+                
+                <div class="badge-footer">BADGE ULTRA</div>
+            </div>
+            
+            <button id="downloadBtn" class="download-btn">Télécharger le Badge</button>
+        </div>
+    </div>
+    
+    <footer class="site-footer">
+        Créateur : Kouadio Loïc Emmanuel(fans de himra) — Tel : +2250712062419
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
